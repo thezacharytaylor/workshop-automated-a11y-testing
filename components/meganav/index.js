@@ -21,7 +21,7 @@ const MegaNav = () => {
             document.removeEventListener('mouseup', clickOutside)
         }
     }, [activeMenu])
-    
+
     const clickOutside = (event) => {
         if (!navRef.current.contains(event.target)) {
             setActiveMenu()
