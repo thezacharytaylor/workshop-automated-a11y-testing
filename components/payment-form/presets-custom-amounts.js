@@ -1,45 +1,42 @@
-import React, {useRef, useState} from "react"
+import React, { useRef, useState } from 'react';
 
-const PresetsCustomAmounts = ({amounts}) => {
-    const customAmtRadio = useRef(null)
-    
-    const focusInCustomInput = () => {
-        customAmtRadio.current.checked = true
-    }
+const PresetsCustomAmounts = ({ amounts }) => {
+  const customAmtRadio = useRef(null);
+  const selectedOption = 0;
 
-    return (
-        <>
-            {amounts.map((amount, index)=> {
-                return <label key={index}>
-                    <input
-                        checked={selectedOption == amount}
-                        id={`amt_${amount}`}
-                        name="amounts"
-                        onChange={(event) => handleChange(event)}
-                        type="radio"
-                        value={amount}
-                    />
-                    ${amount}
-                </label>
-            })}
-            <label className="custom-radio-group">
-                <input
-                    id="amt_custom"
-                    name="amounts"
-                    ref={customAmtRadio}
-                    type="radio"
-                    value="Custom"
-                />
-                <input
-                    id="amt_custom_text"
-                    onFocus={focusInCustomInput}
-                    placeholder="$ Other amount"
-                    tabIndex={customAmtRadio.current && customAmtRadio.current.checked ? '0' : '-1'}
-                    type="text"
-                />
-            </label>
-        </>
-    )
-}
+  const focusInCustomInput = () => {
+    customAmtRadio.current.checked = true;
+  };
 
-export default PresetsCustomAmounts
+  return (
+    <>
+      {amounts.map((amount, index) => {
+        return (
+          <label key={index}>
+            <input
+              checked={selectedOption == amount}
+              id={`amt_${amount}`}
+              name="amounts"
+              onChange={(event) => handleChange(event)}
+              type="radio"
+              value={amount}
+            />
+            ${amount}
+          </label>
+        );
+      })}
+      <label className="custom-radio-group">
+        <input id="amt_custom" name="amounts" ref={customAmtRadio} type="radio" value="Custom" />
+        <input
+          id="amt_custom_text"
+          onFocus={focusInCustomInput}
+          placeholder="$ Other amount"
+          tabIndex={customAmtRadio.current && customAmtRadio.current.checked ? '0' : '-1'}
+          type="text"
+        />
+      </label>
+    </>
+  );
+};
+
+export default PresetsCustomAmounts;
