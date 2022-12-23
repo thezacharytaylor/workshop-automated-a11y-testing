@@ -6,6 +6,7 @@ import MegaNav from '../components/meganav';
 describe('MegaNav', () => {
   beforeEach(() => {
     cy.mount(<MegaNav />);
+    cy.injectAxe();
     cy.get('[data-testid="megamenu-section1"]').focus();
   });
 
@@ -31,6 +32,17 @@ describe('MegaNav', () => {
 
     cy.focused().then(($el) => {
       expect($el).to.have.attr('data-testid', 'link-0');
+    });
+  });
+
+  it('should have no accessibility issues when open', () => {
+    cy.get('button[data-testid="megamenu-section1"]').click();
+
+    cy.checkA11y('#header-megamenu', {
+      runOnly: {
+        type: 'tag',
+        values: ['cat.color', 'wcag2aa', 'wcag143', 'ACT'],
+      },
     });
   });
 });
