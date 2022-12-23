@@ -20,7 +20,7 @@ const HomePage = () => {
         <SearchForm />
         <div className="wide-layout two-part-overlap">
           <div className="content-block-wrap">
-            <img src={imgTents} alt="" />
+            <img src={imgTents} alt="Pitched tents at sunset" />
             <div className="content-block">
               <h3>Rest and relaxation is a part of life</h3>
               <div>
