@@ -14,7 +14,7 @@ const Header = ({ inert }) => {
     <header id="header" inert={inert}>
       <div id="header-nav">
         <div id="header-logo">
-          <a href="/" className="header-main-item" aria-current={currentPathname === '/' ? 'true' : 'false'}>
+          <a href="/" className="header-main-item" aria-current={currentPathname === '/' ? 'page' : null}>
             <span className="logo-img">
               <img src={CampSpotsLogo} alt="" />
             </span>
