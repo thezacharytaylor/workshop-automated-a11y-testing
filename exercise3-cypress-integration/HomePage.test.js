@@ -15,6 +15,7 @@ describe('HomePage', () => {
   });
 
   it('header link should have aria-current', () => {
+    // she went with '#header a'
     cy.get('.header-main-item').should('have.attr', 'aria-current', 'true');
   });
 });
