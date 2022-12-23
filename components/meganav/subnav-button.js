@@ -5,6 +5,7 @@ const SubNavButton = React.forwardRef((props, ref) => (
   <h2>
     <button
       aria-expanded={props['aria-expanded'] ? 'true' : 'false'}
+      aria-haspopup="true"
       className="megamenu-navitem header-main-item"
       id={props.idRef}
       data-testid={props.idRef}
