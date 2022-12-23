@@ -2,29 +2,29 @@
  * @jest-environment jsdom
  */
 
- import React from 'react'
- import { render, getByRole, getByLabelText } from '@testing-library/react'
- import '@testing-library/jest-dom'
- import userEvent from '@testing-library/user-event'
- 
- import Icon from "../icon"
- 
- const user = userEvent.setup()
- 
- xdescribe('Icon', () =>{
-     xit('labels the icon', () => {
-        const nameFixture = "dock"
-        const { getByLabelText } = render(<Icon name={nameFixture} />)
+import React from 'react';
+import { render, getByRole, getByLabelText } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
-        const iconText = getByLabelText(nameFixture)
+import Icon from '../icon';
 
-        expect(iconText).toBeInTheDocument()
-     })
-     xit('has an image role', () => {
-        const {getByRole} = render(<Icon name="wifi" />)
+const user = userEvent.setup();
 
-        const icon = getByRole('img')
+describe('Icon', () => {
+  it('labels the icon', () => {
+    const nameFixture = 'dock';
+    const { getByLabelText } = render(<Icon name={nameFixture} />);
 
-        expect(icon).toBeInTheDocument()
-     })
-})
+    const iconText = getByLabelText(nameFixture);
+
+    expect(iconText).toBeInTheDocument();
+  });
+  it('has an image role', () => {
+    const { getByRole } = render(<Icon name="wifi" />);
+
+    const icon = getByRole('img');
+
+    expect(icon).toBeInTheDocument();
+  });
+});
