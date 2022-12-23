@@ -5,11 +5,12 @@ import CampSpotsLogo from 'images/icons/camp-spots-logo.svg';
 import MegaNav from './meganav/';
 
 const Header = ({ inert }) => {
+  const pathName = document.location.pathname;
   return (
-    <div id="header" inert={inert}>
+    <header id="header" inert={inert}>
       <div id="header-nav">
         <div id="header-logo">
-          <a href="/" className="header-main-item">
+          <a href="/" className="header-main-item" aria-current={pathName === '/' ? 'true' : 'false'}>
             <span className="logo-img">
               <img src={CampSpotsLogo} alt="" />
             </span>
@@ -21,7 +22,7 @@ const Header = ({ inert }) => {
           <a href="#">Login</a>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

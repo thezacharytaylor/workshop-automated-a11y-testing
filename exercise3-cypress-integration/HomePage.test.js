@@ -13,4 +13,8 @@ describe('HomePage', () => {
       exclude: ['div#portal-root'],
     });
   });
+
+  it('header link should have aria-current', () => {
+    cy.get('.header-main-item').should('have.attr', 'aria-current', 'true');
+  });
 });
