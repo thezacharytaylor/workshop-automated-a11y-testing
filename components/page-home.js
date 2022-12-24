@@ -15,7 +15,7 @@ const HomePage = () => {
     <BodyClassName className="page-home">
       <>
         <HeaderPortal>
-          <h1 className="visually-hidden">Camp Spots</h1>
+          <h1 className="visually-hidden">CampSpots</h1>
         </HeaderPortal>
         <SearchForm />
         <div className="wide-layout two-part-overlap">
