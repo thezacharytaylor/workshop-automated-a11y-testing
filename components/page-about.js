@@ -1,6 +1,7 @@
 import React from 'react';
 import BodyClassName from 'react-body-classname';
 import { Helmet } from 'react-helmet';
+import HeaderPortal from 'components/header-portal';
 
 import './styles/page-about.scss';
 import imgAbout from 'images/about-image.jpg';
